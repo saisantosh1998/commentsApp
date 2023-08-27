@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Comment Widget
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web application built using React and Material-UI that allows users to view, post, edit, like, and reply to comments. It provides a user-friendly interface for managing comment threads and interactions.
+## Features
 
-## Available Scripts
+- Display and sort comments by date or likes.
+- Post new comments.
+- Edit existing comments.
+- Like and unlike comments.
+- Reply to comments.
+- Delete comments and their replies.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Clone this repository to your local machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+  git clone https://github.com/saisantosh1998/commentsApp
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Go to  directory.
 
-### `npm test`
+```bash
+  cd comment-widget
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the required dependencies.
 
-### `npm run build`
+```bash
+  npm install
+```
+4. Start mock server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm run mock-server
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Start the application.
+```bash
+  npm start
+```
+6. Open your browser and navigate to http://localhost:3000 to see the app.
+## Mock server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Comment Widget uses a mock server to handle API requests. The mock server is set up using json-server and serves as a backend to manage comments.
 
-### `npm run eject`
+The mock server is running on http://localhost:5000.
+Endpoints:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    1. GET /comments: Get all comments.
+    2. POST /comments: Add a new comment.
+    3. PATCH /comments/:id: Update a comment's likes or content.
+    4. DELETE /comments/:id: Delete a comment.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The mock server's data is stored in the db.json file.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React
+- Material-UI
+- axios
+- json-server (for mock server)
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    1. Enter your comment in the input field and click "Submit" to post a new comment.
+    2. Click the "Like" button to like a comment. Click again to unlike.
+    3. Click the "Reply" button to reply to a comment.
+    4. Click the "Edit" button to edit a comment.
+    5. Click the "Delete" button to delete a comment and its replies.
+    6. Use the "Sort by" dropdown to change the sorting order of comments.
+## Design Decisions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React and Material-UI: The Comment Widget is built using React for its component-based architecture and reusability. Material-UI was chosen for its pre-designed UI components that provide a polished and consistent user interface.
 
-### Code Splitting
+- JSON Server: To simulate a backend, json-server was used to manage comments, likes, and replies. This decision allowed for easy testing and development without the need for a real backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- User Experience: The widget aims for a clean and intuitive user experience. Comments are nested to enhance readability, and buttons for actions like liking, replying, editing, and deleting are provided for each comment.
+## Challenges Faced
 
-### Analyzing the Bundle Size
+- Nested Comments: Implementing the nested comment structure was challenging. It required recursive rendering of Comment components and careful handling of parent-child relationships.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Real-time Updates: Ensuring that the UI updated in real-time when a user liked or replied to a comment required careful state management and rendering strategies.
+## User Experience and Accessibility
 
-### Making a Progressive Web App
+- User-Centric Design: The widget follows Material Design principles to ensure a user-friendly experience. Clear buttons, intuitive icons, and hierarchical comment structure enhance usability.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Accessibility: Material-UI components are designed with accessibility in mind, making the widget more inclusive. The widget also uses semantic HTML and provides alt text for icons.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## External Utility Libraries
 
-### Deployment
+- axios: Used for making HTTP requests to the mock server, enabling seamless communication between the frontend and backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- notistack: Integrated for displaying user-friendly notifications, such as error messages to enhance the user experience.
+## License
 
-### `npm run build` fails to minify
+[ISC](https://choosealicense.com/licenses/isc/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
