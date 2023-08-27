@@ -1,0 +1,28 @@
+{
+  "comments": [
+    {
+      "id": "1",
+      "content": "This is an awesome widget mannn",
+      "author": "Alice",
+      "likes": 5,
+      "date": "2023-08-25T12:30:00.000Z",
+      "parentId": null
+    },
+    {
+      "id": "2",
+      "content": "I agree, it's really cool!",
+      "author": "Bob",
+      "likes": 2,
+      "date": "2023-08-25T12:40:00.000Z",
+      "parentId": "1"
+    },
+    {
+      "id": "3",
+      "content": "Great job on this project!",
+      "author": "Charlie",
+      "likes": 10,
+      "date": "2023-08-25T11:15:00.000Z",
+      "parentId": null
+    }
+  ]
+}
